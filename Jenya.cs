@@ -17,7 +17,7 @@ namespace EventsDelegates
 			set
 			{
 				_hp = value;
-				OnHpChanged(this, new HpChangedEventArgs(value));
+				OnHpChanged(new HpChangedEventArgs(value));
 			}
 		}
 
