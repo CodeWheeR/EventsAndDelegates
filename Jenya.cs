@@ -27,7 +27,7 @@ namespace EventsDelegates
 				HpChanged -= i;
 		}
 		
-		public void OnHpChanged(object obj, HpChangedEventArgs e) 
+		public void OnHpChanged(HpChangedEventArgs e) 
 			=> HpChanged?.Invoke(this, e);
 
 		public void HpChangedAddEvent(EventHandler<HpChangedEventArgs> action)
