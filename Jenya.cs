@@ -17,7 +17,7 @@ namespace EventsDelegates
 			set
 			{
 				_hp = value;
-				OnHpChanged(new HpChangedEventArgs(value));
+				OnHpChanged(this, new HpChangedEventArgs(value));
 			}
 		}
 
@@ -27,8 +27,8 @@ namespace EventsDelegates
 				HpChanged -= i;
 		}
 		
-		public void OnHpChanged(HpChangedEventArgs e) 
-			=> HpChanged?.Invoke(this, e);
+		public void OnHpChanged(object obj, HpChangedEventArgs e) 
+			=> HpChanged?.Invoke(obj, e);
 
 		public void HpChangedAddEvent(EventHandler<HpChangedEventArgs> action)
 		{
